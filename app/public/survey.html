@@ -6,7 +6,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
@@ -25,6 +25,7 @@
         <label for="participantImage">Link to Photo Image (Required)</label>
         <input type="text" class="form-control" id="participantImage" placeholder="Paste Image Link Here">
       </div>
+      <!-- Buttons -->
       <div class="form-group">
         <h3>Question 1</h3>
         <h4>Placeholder</h4>
@@ -32,7 +33,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q1" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -48,7 +49,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q2" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -64,7 +65,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q3" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -76,12 +77,11 @@
 
         <h3>Question 4</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q4" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -94,12 +94,11 @@
 
         <h3>Question 5</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q5" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -112,12 +111,11 @@
 
         <h3>Question 6</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q6" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -130,12 +128,11 @@
 
         <h3>Question 7</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q7" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -148,12 +145,11 @@
 
         <h3>Question 8</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q8" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -166,12 +162,11 @@
 
         <h3>Question 9</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q9" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -184,12 +179,11 @@
 
         <h3>Question 10</h3>
         <h4>Placeholder</h4>
-        <h4>Placeholder</h4>
         <div style="margin-bottom: 20px" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Value
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" id="q10" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" data-value="0">0 (Strongly Disagree)</a></li>
             <li><a class="dropdown-item" data-value="1">1</a></li>
             <li><a class="dropdown-item" data-value="2">2</a></li>
@@ -211,13 +205,34 @@
       $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
     });
 
-    $(".submit").on("click", function(event) {
+    $("#submit").on("click", function(event) {
       event.preventDefault();
 
       var newFriend = {
-        name: $("#")
-      }
-    })
+        name: $("#participantName").val().trim(),
+        photo: $("#participantImage").val().trim(),
+        score: [
+          $("#q1").val().trim(),
+          $("#q2").val().trim(),
+          $("#q3").val().trim(),
+          $("#q4").val().trim(),
+          $("#q5").val().trim(),
+          $("#q6").val().trim(),
+          $("#q7").val().trim(),
+          $("#q8").val().trim(),
+          $("#q9").val().trim(),
+          $("#q10").val().trim()
+        ]
+      };
+
+    console.log(newFriend);
+
+    $.post("/api/friends", newFriend, function(data) {
+        console.log(error);
+        console.log(data);
+
+      });
+    });
 
   </script>
 
