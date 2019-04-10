@@ -1,4 +1,7 @@
 var friendsData = require("../data/friends")
+console.log(friendsData[0]);
+console.log(friendsData[0].score[0]);
+
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
@@ -15,16 +18,16 @@ module.exports = function(app) {
     var lowestScore = 100;
     // var totalDifference = 0;
     console.log(friendsData[0]);
-    console.log(friendsData.score[0]);
+    console.log(friendsData[0].score[0]);
     for (var i = 0; i < friendsData.length; i++) {
       var totalDifference = 0;
-      for(var j = 0; j < friendsData[i].score[j]; j++) {
+      for(var j = 0; j < friendsData[i].score.length; j++) {
         totalDifference += Math.abs(parseInt(friendsData[i].score[j]) - parseInt(req.body.score[j]));
 
-        if(totalDifference < match.matchScore) {
-          match.name = friendsData[i].name;
-          match.photo = friendsData[i].photo;
-          match.matchScore = totalDifference;
+        if(totalDifference < matchedFriend.lowestScore) {
+          matchedFriend.name = friendsData[i].name;
+          matchedFriend.photo = friendsData[i].photo;
+          matchedFriend.matchScore = totalDifference;
         }
       }
     }

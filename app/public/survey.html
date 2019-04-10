@@ -195,7 +195,27 @@
 
       <!-- Submit Button HTML -->
       <button style="margin-bottom: 300px; cursor: pointer" type="button" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+
+      <div class="modal fade" id="complete-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 style="color: red">Please complete form before submitting.</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
+  </div>
+</div>
   </body>
 
   <script type="text/javascript">
@@ -207,6 +227,27 @@
 
     $("#submit").on("click", function(event) {
       event.preventDefault();
+
+      function formComplete() {
+        var isValid = true;
+        $(".form-control").each(function () {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        $("#name").each(function () {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        $("#photo").each(function () {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        return isValid;
+      }
+      if (formComplete()) {
 
       var newFriend = {
         name: $("#participantName").val().trim(),
@@ -225,14 +266,16 @@
         ]
       };
 
-    console.log(newFriend);
-
     $.post("/api/friends", newFriend, function(data) {
-        console.log(error);
-        console.log(data);
-
+      $("#friend-match-name").text(data.name);
+      $("#friend-match-photo").attr("src", data.photo);
+      $("#user-match").modal("toggle");
       });
-    });
+    } else {
+      $("#complete-form").modal("toggle");
+    }
+    $(".form-control").val("");
+  });
 
   </script>
 
